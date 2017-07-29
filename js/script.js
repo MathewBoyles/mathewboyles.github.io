@@ -6,8 +6,8 @@ $(document).ready(function() {
     assetLoaded: 0,
     popInit: false,
     loaded: false,
-    contentAware: function(){
-      if(typeof Template7 == "undefined") return;
+    contentAware: function() {
+      if (typeof Template7 == "undefined") return;
 
       $("tmpl").each(function() {
         if ($(this).data("dataInit")) return;
@@ -20,13 +20,13 @@ $(document).ready(function() {
         }, $(this));
       });
 
-      if(app.assetLoaded < app.assetCount || typeof mlPushMenu == "undefined" || $("tmpl").is("*")) return;
+      if (app.assetLoaded < app.assetCount || typeof mlPushMenu == "undefined" || $("tmpl").is("*")) return;
 
-      $(".js-scroll").each(function(){
-        if($(this).data("dataInit")) return;
+      $(".js-scroll").each(function() {
+        if ($(this).data("dataInit")) return;
 
-        $(this).data("dataInit", 1).click(function(event){
-          if(!$($(this).attr("href")).is(":visible")) return;
+        $(this).data("dataInit", 1).click(function(event) {
+          if (!$($(this).attr("href")).is(":visible")) return;
 
           $("#scroller").animate({
             scrollTop: $($(this).attr("href")).offset().top + $("#scroller").scrollTop()
@@ -36,36 +36,31 @@ $(document).ready(function() {
         });
       });
 
-      // $(".js-link").each(function(){
-      //   if(!history.pushState) return;
-      //   if($(this).data("dataInit")) return;
-      //
-      //   $(this).data("dataInit", 1).click(function(event){
-      //     history.pushState(null, document.title, $(this).attr("href"));
-      //
-      //     $(window).trigger("popstate");
-      //
-      //     event.preventDefault();
-      //   });
-      // });
-
-      if(!app.loaded){
+      if (!app.loaded) {
         app.loaded = true;
         $(window).trigger("hashchange");
+
+        new mlPushMenu(
+          $("#mp-menu")[0],
+          $("#navbar-open")[0]
+        );
+        $("#navbar-close").click(function() {
+          $("#navbar-open").click();
+        });
       }
 
       return app;
     },
-    loadPage: function(url){
-      if(!url) url = "index";
+    loadPage: function(url) {
+      if (!url) url = "index";
 
       $.ajax({
         url: app.root + "tmpl/pages/" + url + ".html",
-        success: function(html, status, data){
+        success: function(html, status, data) {
           $("#loading").fadeOut(250);
 
-          var pageTitle = html.match(/<title>(.*?)<\/title>/g).map(function(val){
-             return val.replace(/<\/?title>/g,'');
+          var pageTitle = html.match(/<title>(.*?)<\/title>/g).map(function(val) {
+            return val.replace(/<\/?title>/g, '');
           });
 
           document.title = pageTitle[0];
@@ -74,7 +69,7 @@ $(document).ready(function() {
 
           app.contentAware();
         },
-        error: function(data){
+        error: function(data) {
           app.loadPage(data.status);
         }
       });
@@ -170,12 +165,12 @@ $(document).ready(function() {
 
       return app;
     },
-    assetAdd: function(){
+    assetAdd: function() {
       app.assetCount++;
 
       return app;
     },
-    assetLoad: function(){
+    assetLoad: function() {
       app.assetLoaded++;
       app.contentAware();
 
@@ -197,7 +192,7 @@ $(document).ready(function() {
   app.contentAware();
 });
 
-$(window).bind("hashchange", function(event){
+$(window).bind("hashchange", function(event) {
   $("#loading").fadeIn(250);
   app.loadPage(window.location.hash.replace("#!/", ""));
 });
