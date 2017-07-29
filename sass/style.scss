@@ -1,9 +1,9 @@
-$gradient-start: rgba(255, 87, 34, 0.85);
-$gradient-end: rgba(246, 138, 60, 0.7);
+$gradient-start : #ff5722;
+$gradient-end   : #f68a3c;
 $secondary-color: #2196F3;
 
 html, body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .link-blank,
@@ -12,6 +12,7 @@ html, body {
   text-decoration: inherit;
 }
 
+@import "loader";
 @import "buttons";
 @import "navbar";
 @import "pusher";

@@ -10,7 +10,10 @@
 
     &.small-header {
       height: 70vh;
+    }
 
+    &.small-header,
+    &.bottom-header {
       .header-container {
         bottom: 8vh;
         top: auto;
@@ -22,10 +25,10 @@
 
     &::before {
       background: #f68a3c;
-      background: -webkit-linear-gradient($gradient-start, $gradient-end);
-      background: -o-linear-gradient($gradient-start, $gradient-end);
-      background: -moz-linear-gradient($gradient-start, $gradient-end);
-      background: linear-gradient($gradient-start, $gradient-end);
+      background: -webkit-linear-gradient(rgba($gradient-start, 0.85), rgba($gradient-end, 0.7));
+      background: -o-linear-gradient(rgba($gradient-start, 0.85), rgba($gradient-end, 0.7));
+      background: -moz-linear-gradient(rgba($gradient-start, 0.85), rgba($gradient-end, 0.7));
+      background: linear-gradient(rgba($gradient-start, 0.85), rgba($gradient-end, 0.7));
       content: " ";
       display: block;
       height: 100%;

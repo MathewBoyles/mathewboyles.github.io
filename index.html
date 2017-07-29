@@ -10,72 +10,16 @@
 </head>
 <body>
 
+  <div id="loading">
+    <div class="loader"></div>
+  </div>
+
   <div class="mp-pusher" id="mp-pusher">
-    <nav id="mp-menu" class="mp-menu">
-      <div class="mp-level">
-        <h2>Mathew Boyles <i class="fa fa-times pull-right" id="navbar-close"></i></h2>
-        <ul>
-          <li><a href="/"><span>Work</span></a></li>
-          <li><a href="/about"><span>About</span></a></li>
-          <li><a href="/contact"><span>Contact</span></a></li>
-
-          <li class="has-icon"><a href="https://www.linkedin.com/in/mathewboyles/" target="_blank"><i class="fa fa-linkedin"></i> <span>LinkedIn</span></a></li>
-          <li class="has-icon"><a href="https://github.com/MathewBoyles" target="_blank"><i class="fa fa-github"></i> <span>GitHub</span></a></li>
-          <li class="has-icon"><a href="https://www.instagram.com/mathewboyles.pvt/" target="_blank"><i class="fa fa-instagram"></i> <span>Instagram</span></a></li>
-        </ul>
-      </div>
-    </nav>
-
-
-  	<div class="scroller">
+    <tmpl src="sidebar"></tmpl>
+  	<div class="scroller" id="scroller">
   		<div class="scroller-inner">
-
-        <nav class="navbar primary-navbar">
-          <ul class="navbar-links">
-            <li><a href="/">Work</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-          <div class="container">
-            <div class="navbar-bars">
-              <i class="fa fa-bars" aria-hidden="true" id="navbar-open"></i>
-            </div>
-            <a href="/" class="link-blank">
-              <img src="img/logo--text--white.svg" class="navbar-logo" />
-              <span class="navbar-name">Mathew Boyles</span>
-            </a>
-            <ul class="navbar-social">
-              <li><a href="https://www.linkedin.com/in/mathewboyles/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="https://github.com/MathewBoyles" target="_blank"><i class="fa fa-github"></i></a></li>
-              <li><a href="https://www.instagram.com/mathewboyles.pvt/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <div class="jumbotron primary-header">
-          <div class="header-container">
-            <div class="container">
-              <h1 class="header-title">UI/UX Designer &amp;<br /> Web Developer <i class="fa fa-code" aria-hidden="true"></i></h1>
-              <p class="header-caption">Mathew Boyles</p>
-              <p class="header-location"><i class="fa fa-map-marker" aria-hidden="true"></i> <small>Wellington, New Zealand</small></p>
-              <a class="header-button btn btn-blank" href="/contact" role="button">Let's Talk</a>
-            </div>
-          </div>
-          <div class="header-credits">
-            <a href="https://unsplash.com/photos/cuTk59eNHUE" target="_blank">
-              <div>Mathew Waters</div>
-              <small>Cape Reinga, New Zealand</small>
-            </a>
-          </div>
-        </div>
-
-        <div class="primary-quote">
-          <div class="container">
-            <div class="quote-text">"Quote"</div>
-            <div class="quote-name">Person</div>
-          </div>
-        </div>
-
+        <tmpl src="navbar"></tmpl>
+        <div id="page"></div>
       </div>
     </div>
   </div>
