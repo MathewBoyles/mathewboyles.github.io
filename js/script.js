@@ -53,6 +53,7 @@ $(document).ready(function() {
     },
     loadPage: function(url) {
       if (!url) url = "index";
+      if($("#mp-menu .mp-level").hasClass("mp-level-open")) $("#navbar-open").click();
 
       $.ajax({
         url: app.root + "tmpl/pages/" + url + ".html",
