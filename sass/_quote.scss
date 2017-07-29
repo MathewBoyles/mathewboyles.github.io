@@ -1,0 +1,21 @@
+.primary-quote {
+  background: $secondary-color;
+  color: #fff;
+  font-family: 'Zilla Slab', serif;
+  padding: 40px 0;
+  text-align: center;
+
+  .quote-text {
+    font-size: 2em;
+    font-style: italic;
+  }
+
+  .quote-name {
+    font-size: 1em;
+    margin-top: 4px;
+
+    &::before {
+      content: "~ ";
+    }
+  }
+}

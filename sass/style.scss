@@ -1,0 +1,19 @@
+$gradient-start: rgba(255, 87, 34, 0.85);
+$gradient-end: rgba(246, 138, 60, 0.7);
+$secondary-color: #2196F3;
+
+html, body {
+  overflow-x: hidden;
+}
+
+.link-blank,
+.link-blank:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+@import "buttons";
+@import "navbar";
+@import "pusher";
+@import "header";
+@import "quote";

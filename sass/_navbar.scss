@@ -1,0 +1,124 @@
+.navbar {
+  &.primary-navbar {
+    border: none;
+    margin: 0;
+    padding: 35px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+
+    .navbar-links {
+      list-style: none;
+      margin: 27px 0;
+      padding: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+
+      > li {
+        color: #fff;
+        display: inline-block;
+        padding: 17px 10px 10px;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 100;
+
+        > a {
+          color: #fff;
+          font-family: Montserrat, Helvetica, Arial, sans-serif;
+          font-weight: 900;
+          text-decoration: none;
+
+          &::after {
+            background: #fff;
+            content: " ";
+            display: block;
+            height: 2px;
+            margin-top: 2px;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            width: 0;
+          }
+
+          &:hover {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .container {
+      position: relative;
+
+      .navbar-bars {
+        color: #fff;
+        cursor: pointer;
+        display: none;
+        float: right;
+        font-size: 2em;
+      }
+
+      .navbar-logo {
+        background: #fff;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        height: 35px;
+      }
+
+      .navbar-name {
+        color: #fff;
+        display: none;
+        font-family: Montserrat, Helvetica, Arial, sans-serif;
+        font-weight: 900;
+        line-height: 35px;
+        padding-left: 10px;
+      }
+
+      .navbar-social {
+        float: right;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+          color: #fff;
+          display: inline-block;
+          padding: 10px 6px;
+          text-transform: uppercase;
+
+          > a {
+            color: #fff;
+            font-family: Montserrat, Helvetica, Arial, sans-serif;
+            font-weight: 900;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    @media (max-width: 700px) {
+      .navbar-links {
+        display: none;
+      }
+
+      .container {
+        .navbar-bars {
+          display: block;
+        }
+
+        .navbar-name {
+          display: inline;
+        }
+
+        .navbar-social {
+          display: none;
+        }
+      }
+    }
+  }
+}
