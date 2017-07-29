@@ -186,6 +186,7 @@ if ( typeof define === 'function' && define.amd ) {
 			this.levelBack = Array.prototype.slice.call( this.el.querySelectorAll( '.' + this.options.backClass ) );
 			// event type (if mobile use touch events)
 			this.eventtype = mobilecheck() ? 'touchstart' : 'click';
+			this.eventtype = 'click';
 			// add the class mp-overlap or mp-cover to the main element depending on options.type
 			classie.add( this.el, 'mp-' + this.options.type );
 			// initialize / bind the necessary events

@@ -10,17 +10,7 @@
 
     &.small-header {
       height: 70vh;
-    }
-
-    &.small-header,
-    &.bottom-header {
-      .header-container {
-        bottom: 8vh;
-        top: auto;
-        -ms-transform: none;
-        -webkit-transform: none;
-        transform: none;
-      }
+      min-height: 500px;
     }
 
     &::before {
@@ -48,6 +38,14 @@
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
       width: 100%;
+
+      &.container-bottom {
+        bottom: 8vh;
+        top: auto;
+        -ms-transform: none;
+        -webkit-transform: none;
+        transform: none;
+      }
       @media (max-width: 1000px) {
         padding: 0 15px;
       }
