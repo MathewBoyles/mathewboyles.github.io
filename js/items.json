@@ -1,0 +1,243 @@
+[{
+    "title": "DriveMate",
+    "date": "July, 2017",
+    "thumbnail": "tourism-nz",
+    "link": "drivemate",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/Tourism-NZ",
+    "tags": [
+      "tag-web",
+      "tag-academic"
+    ]
+  },
+  {
+    "title": "Adobe Create Jam",
+    "date": "July, 2017",
+    "thumbnail": "cjamwelly",
+    "link": "cjamwelly",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "trophy",
+    "github": false,
+    "tags": [
+      "tag-graphic",
+      "tag-competition"
+    ]
+  },
+  {
+    "title": "Kmart Store Finder",
+    "date": "June, 2017",
+    "thumbnail": "kmart-nz",
+    "link": "kmart-nz",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/Kmart-NZ",
+    "tags": [
+      "tag-web",
+      "tag-academic"
+    ]
+  },
+  {
+    "title": "Apex Education",
+    "date": "June, 2017",
+    "thumbnail": "apexeducation",
+    "link": "https://apexeducation.nz/",
+    "link_title": "Website",
+    "link_internal": false,
+    "icon": "usd",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-commission"
+    ]
+  },
+  {
+    "title": "Jess Baider",
+    "date": "May, 2017",
+    "thumbnail": "jessbaider",
+    "link": "jessbaider",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "usd",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-graphic",
+      "tag-commission"
+    ]
+  },
+  {
+    "title": "WCL Community Lending",
+    "date": "May, 2017",
+    "thumbnail": "wclcommunity",
+    "link": "wcl",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/WCL-Community-Lending",
+    "tags": [
+      "tag-web",
+      "tag-academic"
+    ]
+  },
+  {
+    "title": "Deluxe Cafe",
+    "date": "April, 2017",
+    "thumbnail": "deluxecafe",
+    "link": "deluxecafe",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/Deluxe-Cafe",
+    "tags": [
+      "tag-web",
+      "tag-team",
+      "tag-academic"
+    ]
+  },
+  {
+    "title": "Memory Game",
+    "date": "March, 2017",
+    "thumbnail": "memory",
+    "link": "https://mathewboyles.github.io/Memory-Game/",
+    "link_title": "Play Game",
+    "link_internal": false,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/Memory-Game",
+    "tags": [
+      "tag-web",
+      "tag-game",
+      "tag-academic"
+    ]
+  },
+  {
+    "title": "High School Alumni",
+    "date": "November, 2016",
+    "thumbnail": "alumni",
+    "link": "http://alumni.hawerahs.school.nz/",
+    "link_title": "Website",
+    "link_internal": false,
+    "icon": "usd",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-commission"
+    ]
+  },
+  {
+    "title": "Vendcher",
+    "date": "May, 2015",
+    "thumbnail": "vendcher",
+    "link": "vendcher",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "usd",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-commission"
+    ]
+  },
+  {
+    "title": "Top of the Deck",
+    "date": "February, 2015",
+    "thumbnail": "totd",
+    "link": false,
+    "link_title": false,
+    "link_internal": false,
+    "icon": "pencil",
+    "github": "MathewBoyles/Top-of-the-Deck",
+    "tags": [
+      "tag-web",
+      "tag-practise"
+    ]
+  },
+  {
+    "title": "Mybelle",
+    "date": "January, 2015",
+    "thumbnail": "mybelle",
+    "link": "mybelle",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "usd",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-graphic",
+      "tag-commission"
+    ]
+  },
+  {
+    "title": "HabLoader",
+    "date": "January, 2015",
+    "thumbnail": "habloader",
+    "link": "habloader",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "pencil",
+    "github": "MathewBoyles/HabLoader",
+    "tags": [
+      "tag-web",
+      "tag-practise"
+    ]
+  },
+  {
+    "title": "Bandchat",
+    "date": "December, 2014",
+    "thumbnail": "bandchat",
+    "link": false,
+    "link_title": false,
+    "link_internal": false,
+    "icon": "pencil",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-practise"
+    ]
+  },
+  {
+    "title": "SuperPlayer",
+    "date": "June, 2014",
+    "thumbnail": "superplayer",
+    "link": "superplayer",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "trophy",
+    "github": "MathewBoyles/SuperPlayer",
+    "tags": [
+      "tag-web",
+      "tag-competition"
+    ]
+  },
+  {
+    "title": "Proximity Player",
+    "date": "April, 2014",
+    "thumbnail": "proximity",
+    "link": "proximity",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "pencil",
+    "github": "MathewBoyles/Proximity-Player",
+    "tags": [
+      "tag-web",
+      "tag-practise"
+    ]
+  },
+  {
+    "title": "Minecart Network",
+    "date": "2014",
+    "thumbnail": "minecart",
+    "link": false,
+    "link_title": false,
+    "link_internal": false,
+    "icon": "pencil",
+    "github": false,
+    "tags": [
+      "tag-web",
+      "tag-practise"
+    ]
+  }
+]

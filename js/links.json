@@ -1,0 +1,36 @@
+{
+  "nav": [
+    {
+      "link": "index",
+      "title": "Work",
+      "internal": true
+    },
+    {
+      "link": "about",
+      "title": "About",
+      "internal": true
+    },
+    {
+      "link": "contact",
+      "title": "Contact",
+      "internal": true
+    }
+  ],
+  "social": [
+    {
+      "link": "https://www.linkedin.com/in/mathewboyles/",
+      "title": "LinkedIn",
+      "icon": "linkedin"
+    },
+    {
+      "link": "https://github.com/MathewBoyles",
+      "title": "GitHub",
+      "icon": "github"
+    },
+    {
+      "link": "https://www.instagram.com/mathewboyles.pvt/",
+      "title": "Instagram",
+      "icon": "instagram"
+    }
+  ]
+}

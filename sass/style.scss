@@ -1,20 +1,12 @@
-$gradient-start : #ff5722;
-$gradient-end   : #f68a3c;
+$gradient-start: #ff5722;
+$gradient-end: #f68a3c;
 $secondary-color: #2196F3;
-
-html, body {
-  overflow: hidden;
-}
-
-.link-blank,
-.link-blank:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-
+@import "default";
 @import "loader";
 @import "buttons";
 @import "navbar";
 @import "pusher";
 @import "header";
 @import "quote";
+@import "mixer";
+@import "items";

@@ -1,10 +1,11 @@
 @-webkit-keyframes loading {
   0%,
-  80%,
-  100% {
+  100%,
+  80% {
     box-shadow: 0 0;
     height: 4em;
   }
+
   40% {
     box-shadow: 0 -2em;
     height: 5em;
@@ -12,16 +13,18 @@
 }
 @keyframes loading {
   0%,
-  80%,
-  100% {
+  100%,
+  80% {
     box-shadow: 0 0;
     height: 4em;
   }
+
   40% {
     box-shadow: 0 -2em;
     height: 5em;
   }
 }
+
 #loading {
   background: $gradient-end;
   position: fixed;
@@ -32,14 +35,15 @@
   z-index: 1005;
 
   .loader,
-  .loader:before,
-  .loader:after {
+  .loader:after,
+  .loader:before {
     background: #ffffff;
     -webkit-animation: loading 1s infinite ease-in-out;
     animation: loading 1s infinite ease-in-out;
     width: 1em;
     height: 4em;
   }
+
   .loader {
     color: #ffffff;
     text-indent: -9999em;
@@ -53,17 +57,20 @@
     top: 50%;
     left: 50%;
   }
-  .loader:before,
-  .loader:after {
+
+  .loader:after,
+  .loader:before {
     position: absolute;
     top: 0;
     content: '';
   }
+
   .loader:before {
     left: -1.5em;
     -webkit-animation-delay: -0.32s;
     animation-delay: -0.32s;
   }
+
   .loader:after {
     left: 1.5em;
   }

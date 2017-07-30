@@ -1,0 +1,66 @@
+.mixer {
+  .controls {
+    padding: 1.6em 0;
+    background: #333;
+
+    .controls-right {
+      float: right;
+    }
+
+    .control {
+      margin: 5px 2px;
+    }
+    @media (max-width: 768px) {
+      .control {
+        &.btn-blank {
+          width: calc(50% - 6px);
+        }
+      }
+
+      .controls-right {
+        display: inline-block;
+        float: none;
+        width: calc(50% - 2px);
+      }
+    }
+  }
+
+  .mix-container {
+    padding: 1rem;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  .gap,
+  .mix {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .mix {
+    background: #fff;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: inline-block;
+    }
+  }
+
+  .gap,
+  .mix {
+    width: 100%;
+    @media screen and (min-width: 541px) {
+      width: calc(100%/2 - (((2 - 1) * 1rem) / 3));
+    }
+    @media screen and (min-width: 992px) {
+      width: calc(100%/4 - (((4 - 1) * 1rem) / 4));
+    }
+  }
+}

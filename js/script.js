@@ -1,13 +1,17 @@
 var app;
 $(document).ready(function() {
   app = {
-    root: "/",
     assetCount: 0,
     assetLoaded: 0,
     popInit: false,
     loaded: false,
+    vars: {
+      root: "/",
+      thumbnails: "/img/thumbnails/",
+      items: []
+    },
     contentAware: function() {
-      if (typeof Template7 == "undefined") return;
+      if (app.assetLoaded < app.assetCount || typeof mlPushMenu == "undefined" || typeof Modernizr == "undefined" || typeof classie == "undefined" || typeof Template7 == "undefined" || app.vars.links.length === 0 || app.vars.items.length === 0) return;
 
       $("tmpl").each(function() {
         if ($(this).data("dataInit")) return;
@@ -20,7 +24,7 @@ $(document).ready(function() {
         }, $(this));
       });
 
-      if (app.assetLoaded < app.assetCount || typeof mlPushMenu == "undefined" || $("tmpl").is("*")) return;
+      if($("tmpl").is("*")) return;
 
       $(".js-scroll").each(function() {
         if ($(this).data("dataInit")) return;
@@ -35,6 +39,22 @@ $(document).ready(function() {
           event.preventDefault();
         });
       });
+
+      if (!$("#portfolio").data("dataInit") && $("#portfolio").is("*")) {
+        $("#portfolio").data("dataInit", 1);
+
+        var template = $("#portfolio-item").html();
+        var compiledTemplate = Template7.compile(template);
+        var context = {
+          items: app.vars.items
+        };
+        var html = compiledTemplate(context);
+        $("#portfolio").find("#portfolio-item,.mix").last().after(html);
+
+        var newID = "works_" + ((new Date()).getTime());
+        $("#works-wrap").attr("id", newID);
+        mixitup($("#" + newID));
+      }
 
       if (!app.loaded) {
         app.loaded = true;
@@ -53,19 +73,21 @@ $(document).ready(function() {
     },
     loadPage: function(url) {
       if (!url) url = "index";
-      if($("#mp-menu .mp-level").hasClass("mp-level-open")) $("#navbar-open").click();
+      if ($("#mp-menu .mp-level").hasClass("mp-level-open")) $("#navbar-open").click();
 
       $.ajax({
-        url: app.root + "tmpl/pages/" + url + ".html",
-        success: function(html, status, data) {
+        url: app.vars.root + "tmpl/pages/" + url + ".html",
+        cache: false,
+        success: function(tmplData, status, data) {
           $("#loading").fadeOut(250);
 
-          var pageTitle = html.match(/<title>(.*?)<\/title>/g).map(function(val) {
+          var pageTitle = tmplData.match(/<title>(.*?)<\/title>/g).map(function(val) {
             return val.replace(/<\/?title>/g, '');
           });
 
           document.title = pageTitle[0];
-          $("#page").html(html);
+
+          $("#page").html(tmplData);
           $("#page title").remove();
 
           app.contentAware();
@@ -92,77 +114,30 @@ $(document).ready(function() {
 
       return app;
     },
-    template: function(template, successFunction, element, parse) {
-      function newSuccess(template, successFunction, element, parse) {
+    template: function(template, successFunction, element) {
+      function newSuccess(template, successFunction, element) {
         return function(tmplData, status, tmplInfo) {
-          var tmplParse = {};
+          var template = tmplData;
+          var compiledTemplate = Template7.compile(template);
+          var context = app.vars;
+          var html = compiledTemplate(context);
 
-          try {
-            if (element) {
-              if (element.attr("parse")) {
-                if (element.attr("parse").substr(0, 1) == "#") tmplParse = $("script[type=\"template/parse\"][data-name=\"" + element.attr("parse").substr(1) + "\"]").html();
-                else tmplParse = element.attr("parse");
-
-                tmplParse = JSON.parse(tmplParse);
-              }
-            } else if (parse) {
-              if (typeof parse == "string") tmplParse = JSON.parse(parse);
-              else tmplParse = parse;
-            }
-          } catch (err) {
-            console.error("app.template", "PARSE FAILED", err);
-          }
-          tmplParse.global = app.vars;
-          var tmplData_tmp;
-
-          tmplData_tmp = $("<div />");
-          tmplData_tmp.attr("type", "template/temp");
-          tmplData_tmp.html(tmplData);
-          tmplData_tmp.find("script").each(function() {
-            app.tmp.push($(this).html());
-            $(this).html(app.tmp.length - 1);
-          });
-
-          tmplData = Template7.compile(tmplData_tmp.html());
-          tmplData = tmplData(tmplParse);
-
-          tmplData_tmp.remove();
-          tmplData_tmp = $("<div />");
-          tmplData_tmp.attr("type", "template/temp");
-          tmplData_tmp.html(tmplData);
-          tmplData_tmp.find("script").each(function() {
-            var tmplID = Number($(this).html());
-            $(this).html(app.tmp[tmplID]);
-            app.tmp[tmplID] = "";
-          });
-          tmplData_tmp.find("img[data-src],script[data-src]").each(function() {
-            $(this).attr("src", $(this).attr("data-src")).removeAttr("data-src");
-          });
-          tmplData = tmplData_tmp.html();
-          tmplData_tmp.remove();
-
-          successFunction.call(element, tmplData, status, tmplInfo);
+          successFunction.call(element, html, status, tmplInfo);
           app.contentAware();
         };
       }
 
-      if (template.substr(0, 1) == "#") {
-        var tmplData = $("script[type=\"template/template\"][data-name=\"" + template.substr(1) + "\"]").html();
-        var tmplFunction = newSuccess(template, successFunction, element, parse);
-        tmplFunction(tmplData, "success", "internal");
-      } else {
-        var tmplURL;
-        if (template.substr(0, 8) == "https://" || template.substr(0, 7) == "http://") tmplURL = template;
-        else {
-          tmplURL = app.root + "tmpl/" + template + ".html";
-        }
-
-        $.ajax({
-          url: tmplURL,
-          success: newSuccess(template, successFunction, element, parse),
-          cache: false
-        });
+      var tmplURL;
+      if (template.substr(0, 8) == "https://" || template.substr(0, 7) == "http://") tmplURL = template;
+      else {
+        tmplURL = app.vars.root + "tmpl/" + template + ".html";
       }
+
+      $.ajax({
+        url: tmplURL,
+        success: newSuccess(template, successFunction, element),
+        cache: false
+      });
 
       return app;
     },
@@ -185,10 +160,22 @@ $(document).ready(function() {
 
   app.assetAdd().include("https://fonts.googleapis.com/css?family=" + app.fonts.join("|"), "css", app.assetLoad);
   app.assetAdd().include("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", "css", app.assetLoad);
-
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/template7/1.2.3/template7.min.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/links.json?_=" + ((new Date()).getTime()), "json", function(data) {
+    app.vars.links = data;
+
+    app.assetLoad();
+  });
+  app.assetAdd().include(app.vars.root + "js/items.json?_=" + ((new Date()).getTime()), "json", function(data) {
+    app.vars.items = data;
+
+    app.assetLoad();
+  });
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.js", "js", app.assetLoad);
-  app.assetAdd().include(app.root + "js/mlpushmenu.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/mixitup.min.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/modernizr.custom.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/classie.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/mlpushmenu.js", "js", app.assetLoad);
 
   app.contentAware();
 });

@@ -1,8 +1,8 @@
 <nav class="navbar primary-navbar">
   <ul class="navbar-links">
-    <li><a href="#!/index" class="js-link">Work</a></li>
-    <li><a href="#!/about" class="js-link">About</a></li>
-    <li><a href="#!/contact" class="js-link">Contact</a></li>
+    {{#each links.nav}}
+    <li><a href="{{#if internal}}#!/{{/if}}{{link}}" class="js-link"{{#if internal}}{{else}} target="_blank"{{/if}}>{{title}}</a></li>
+    {{/each}}
   </ul>
   <div class="container">
     <div class="navbar-bars">
@@ -13,9 +13,9 @@
       <span class="navbar-name">Mathew Boyles</span>
     </a>
     <ul class="navbar-social">
-      <li><a href="https://www.linkedin.com/in/mathewboyles/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="https://github.com/MathewBoyles" target="_blank"><i class="fa fa-github"></i></a></li>
-      <li><a href="https://www.instagram.com/mathewboyles.pvt/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      {{#each links.social}}
+      <li><a href="{{link}}" target="_blank"><i class="fa fa-{{icon}}"></i></a></li>
+      {{/each}}
     </ul>
   </div>
 </nav>

@@ -1,4 +1,5 @@
 .btn {
+  &.btn-black,
   &.btn-blank,
   &.btn-blue {
     border: 1px solid #fff;
@@ -8,12 +9,12 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
+    font-family: sans-serif;
     font-size: 10px;
     font-weight: 700;
     height: 42px;
     letter-spacing: 0.065em;
     line-height: 42px;
-    margin-top: 20px;
     min-width: 150px;
     padding: 0 10px;
     text-transform: uppercase;
@@ -30,7 +31,19 @@
     }
   }
 
-  &.btn-blue {
+  &.btn-black {
+    border-color: #000;
+    color: #000;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+
+  &.active,
+  &.btn-blue,
+  &.mixitup-control-active {
     background: $secondary-color;
     border-color: $secondary-color;
 
@@ -41,9 +54,20 @@
     }
   }
 
+  &.btn-sm {
+    height: 30px;
+    line-height: 30px;
+    min-width: 80px;
+  }
+
   &.btn-circle {
     font-size: 1.5em;
     min-width: 42px;
     padding: 0;
+
+    &.btn-sm {
+      min-width: 30px;
+      padding-left: 1px;
+    }
   }
 }

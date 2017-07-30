@@ -1,0 +1,19 @@
+body,
+html {
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.link-blank,
+.link-blank:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.block {
+  min-height: 100vh;
+}
+
+.quote-block {
+  min-height: calc(100vh - 144px);
+}

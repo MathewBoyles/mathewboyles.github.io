@@ -1,0 +1,16 @@
+.panel.primary-item {
+  border-radius: 0;
+
+  .panel-title {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+  }
+
+  .panel-meta {
+    font-size: 0.7em;
+    margin: 3px 0;
+
+    > span {
+      margin-right: 7px;
+    }
+  }
+}

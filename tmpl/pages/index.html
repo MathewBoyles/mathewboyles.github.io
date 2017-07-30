@@ -11,11 +11,10 @@
 
   <div class="header-container container-bottom">
     <div class="container">
-      <a class="header-button btn btn-blue js-link" href="#!/contact" role="button">Let's Talk</a>
-      <a class="header-button btn btn-blank btn-circle js-scroll" href="#works" role="button"><i class="fa fa-angle-down"></i></a>
+      <a class="header-button btn btn-blue js-link" href="#!/contact">Let's Talk</a>
+      <a class="header-button btn btn-blank btn-circle js-scroll" href="#works"><i class="fa fa-angle-down"></i></a>
     </div>
   </div>
-
 
   <div class="header-credits">
     <a href="https://unsplash.com/photos/cuTk59eNHUE" target="_blank">
@@ -25,7 +24,71 @@
   </div>
 </div>
 
-<div class="primary-quote" id="works">
+<div class="quote-block" id="works">
+  <div class="mixer" id="works-wrap">
+    <div class="controls">
+      <div class="container">
+        <span type="button" class="control btn btn-sm btn-blank" data-filter="all">All</span>
+        <span type="button" class="control btn btn-sm btn-blank" data-filter=".tag-web">Web</span>
+        <span type="button" class="control btn btn-sm btn-blank" data-filter=".tag-graphic">Graphic</span>
+
+        <span type="button" class="control btn btn-sm btn-blank" data-filter=".tag-commission">Commission</span>
+        <span type="button" class="control btn btn-sm btn-blank" data-filter=".tag-competition">Competition</span>
+        <span type="button" class="control btn btn-sm btn-blank" data-filter=".tag-academic">Academic</span>
+        <span type="button" class="control btn btn-sm btn-blank" data-filter=".tag-practise">Practise</span>
+
+        <div class="controls-right">
+          <span type="button" class="control btn btn-sm btn-blank btn-circle" data-sort="default:asc"><i class="fa fa-angle-up"></i></span>
+          <span type="button" class="control btn btn-sm btn-blank btn-circle" data-sort="default:desc"><i class="fa fa-angle-down"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mix-container" id="portfolio">
+      <script type="text/template7" id="portfolio-item">
+        {{#each items}}
+        <div class="mix {{join tags delimiter=" "}}">
+          <div class="panel panel-default primary-item">
+            {{#if link}}
+            <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" {{#if link_internal}}{{else}} target="_blank"{{/if}}>
+            {{/if}}
+              <img src="{{js "app.vars.thumbnails"}}{{thumbnail}}.jpg" width="100%">
+            {{#if link}}
+            </a>
+            {{/if}}
+            <div class="panel-body">
+              {{#if link}}
+              <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="link-blank" {{#if link_internal}}{{else}} target="_blank"{{/if}}>
+              {{/if}}
+                <h2 class="panel-title">{{title}}</h2>
+              {{#if link}}
+              </a>
+              {{/if}}
+              <div class="panel-meta">
+                <span><i class="fa fa-calendar"></i> {{date}}</span>
+                <span><i class="fa fa-{{icon}}"></i></span>
+              </div>
+              <div class="panel-links text-right">
+                {{#if github}}
+                <a class="btn btn-blue btn-sm btn-circle link-circle" href="https://github.com/{{github}}" target="_blank"><i class="fa fa-github"></i></a>
+                {{/if}}
+                {{#if link}}
+                <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="btn btn-black btn-sm link-view"{{#if link_internal}}{{else}} target="_blank"{{/if}}>{{link_title}}</a>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </script>
+      <div class="gap"></div>
+      <div class="gap"></div>
+      <div class="gap"></div>
+    </div>
+  </div>
+</div>
+
+<div class="primary-quote">
   <div class="container">
     <div class="quote-text">"Quote"</div>
     <div class="quote-name">Person</div>
