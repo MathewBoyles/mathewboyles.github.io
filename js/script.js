@@ -3,8 +3,9 @@ $(document).ready(function() {
   app = {
     assetCount: 0,
     assetLoaded: 0,
-    popInit: false,
     loaded: false,
+    menu: null,
+    popInit: false,
     vars: {
       root: "/",
       thumbnails: "/img/thumbnails/",
@@ -24,7 +25,7 @@ $(document).ready(function() {
         }, $(this));
       });
 
-      if($("tmpl").is("*")) return;
+      if ($("tmpl").is("*")) return;
 
       $(".js-scroll").each(function() {
         if ($(this).data("dataInit")) return;
@@ -60,7 +61,7 @@ $(document).ready(function() {
         app.loaded = true;
         $(window).trigger("hashchange");
 
-        new mlPushMenu(
+        app.menu = new mlPushMenu(
           $("#mp-menu")[0],
           $("#navbar-open")[0]
         );
@@ -161,6 +162,11 @@ $(document).ready(function() {
   app.assetAdd().include("https://fonts.googleapis.com/css?family=" + app.fonts.join("|"), "css", app.assetLoad);
   app.assetAdd().include("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", "css", app.assetLoad);
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/template7/1.2.3/template7.min.js", "js", app.assetLoad);
+  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js", "js", app.assetLoad);
+  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js", "js", app.assetLoad);
+  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/mixitup.min.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/mlpushmenu.min.js", "js", app.assetLoad);
   app.assetAdd().include(app.vars.root + "js/links.json?_=" + ((new Date()).getTime()), "json", function(data) {
     app.vars.links = data;
 
@@ -171,11 +177,6 @@ $(document).ready(function() {
 
     app.assetLoad();
   });
-  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.js", "js", app.assetLoad);
-  app.assetAdd().include(app.vars.root + "js/mixitup.min.js", "js", app.assetLoad);
-  app.assetAdd().include(app.vars.root + "js/modernizr.custom.js", "js", app.assetLoad);
-  app.assetAdd().include(app.vars.root + "js/classie.js", "js", app.assetLoad);
-  app.assetAdd().include(app.vars.root + "js/mlpushmenu.js", "js", app.assetLoad);
 
   app.contentAware();
 });
