@@ -2,7 +2,7 @@
   border-radius: 0;
 
   .panel-title {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    @extend .primary-font;
   }
 
   .panel-meta {

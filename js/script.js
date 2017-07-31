@@ -9,6 +9,7 @@ $(document).ready(function() {
     vars: {
       root: "/",
       thumbnails: "/img/thumbnails/",
+      covers: "/img/thumbnails/cover/",
       items: []
     },
     contentAware: function() {
@@ -36,6 +37,26 @@ $(document).ready(function() {
           $("#scroller").animate({
             scrollTop: $($(this).attr("href")).offset().top + $("#scroller").scrollTop()
           }, 500);
+
+          event.preventDefault();
+        });
+      });
+
+      $(".js-image").each(function() {
+        if ($(this).data("dataInit")) return;
+
+        $(this).data("dataInit", 1).click(function(event) {
+
+          var template = $("#lightbox").html();
+          var compiledTemplate = Template7.compile(template);
+          var context = {
+            title: $(this).attr("title"),
+            image: $(this).attr("href")
+          };
+          var html = compiledTemplate(context);
+          $(html).modal("show").on("hidden.bs.modal", function () {
+            $(this).remove();
+          });
 
           event.preventDefault();
         });
@@ -88,6 +109,13 @@ $(document).ready(function() {
 
           document.title = pageTitle[0];
 
+          var re = new RegExp("{{root}}", "g");
+          tmplData = tmplData.replace(re, app.vars.root);
+          var re = new RegExp("{{thumbnails}}", "g");
+          tmplData = tmplData.replace(re, app.vars.thumbnails);
+          var re = new RegExp("{{covers}}", "g");
+          tmplData = tmplData.replace(re, app.vars.covers);
+
           $("#page").html(tmplData);
           $("#page title").remove();
 
@@ -122,6 +150,9 @@ $(document).ready(function() {
           var compiledTemplate = Template7.compile(template);
           var context = app.vars;
           var html = compiledTemplate(context);
+
+          var re = new RegExp("##tmpl##", "g");
+          html = html.replace(re, "");
 
           successFunction.call(element, html, status, tmplInfo);
           app.contentAware();

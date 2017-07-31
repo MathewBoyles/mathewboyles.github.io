@@ -50,7 +50,7 @@
         <div class="mix {{join tags delimiter=" "}}">
           <div class="panel panel-default primary-item">
             {{#if link}}
-            <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" {{#if link_internal}}{{else}} target="_blank"{{/if}}>
+            <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" {{#unless link_internal}}target="_blank"{{/unless}}>
             {{/if}}
               <img src="{{js "app.vars.thumbnails"}}{{thumbnail}}.jpg" width="100%">
             {{#if link}}
@@ -58,7 +58,7 @@
             {{/if}}
             <div class="panel-body">
               {{#if link}}
-              <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="link-blank" {{#if link_internal}}{{else}} target="_blank"{{/if}}>
+              <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="link-blank" {{#unless link_internal}}target="_blank"{{/unless}}>
               {{/if}}
                 <h2 class="panel-title">{{title}}</h2>
               {{#if link}}
@@ -73,7 +73,7 @@
                 <a class="btn btn-blue btn-sm btn-circle link-circle" href="https://github.com/{{github}}" target="_blank"><i class="fa fa-github"></i></a>
                 {{/if}}
                 {{#if link}}
-                <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="btn btn-black btn-sm link-view"{{#if link_internal}}{{else}} target="_blank"{{/if}}>{{link_title}}</a>
+                <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="btn btn-black btn-sm link-view" {{#unless link_internal}}target="_blank"{{/unless}}>{{link_title}}{{#unless link_internal}} <i class="fa fa-external-link"></i>{{/unless}}</a>
                 {{/if}}
               </div>
             </div>

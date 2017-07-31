@@ -24,10 +24,22 @@
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 
-    &:hover {
+    &:not(.btn-dead):hover {
       background-color: #fff;
       color: #242526;
       text-decoration: none;
+    }
+
+    &.btn-tag {
+      line-height: 1.3em;
+      padding-top: 7px;
+      text-align: left;
+
+      > small {
+        color: #fff;
+        display: block;
+        opacity: 0.8;
+      }
     }
   }
 
@@ -35,7 +47,7 @@
     border-color: #000;
     color: #000;
 
-    &:hover {
+    &:not(.btn-dead):hover {
       background-color: #000;
       color: #fff;
     }
@@ -47,7 +59,7 @@
     background: $secondary-color;
     border-color: $secondary-color;
 
-    &:hover {
+    &:not(.btn-dead):hover {
       background: lighten($secondary-color, 5);
       border-color: lighten($secondary-color, 5);
       color: #fff;
@@ -69,5 +81,14 @@
       min-width: 30px;
       padding-left: 1px;
     }
+  }
+
+  &.btn-square {
+    border-radius: 0;
+  }
+
+  &.btn-dead {
+    cursor: inherit;
+    user-select: inherit;
   }
 }

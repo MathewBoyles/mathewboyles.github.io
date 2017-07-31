@@ -169,7 +169,7 @@ html {
   text-shadow: 0 0 1px rgba(0,0,0,0.1);
   font-weight: 300;
   font-size: 1.8em;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  @extend .primary-font;
 
   .fa {
     cursor: pointer;

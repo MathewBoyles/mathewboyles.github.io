@@ -2,14 +2,15 @@
     "title": "DriveMate",
     "date": "July, 2017",
     "thumbnail": "tourism-nz",
-    "link": "drivemate",
-    "link_title": "Info",
-    "link_internal": true,
+    "link": "https://mathewboyles.github.io/Tourism-NZ/",
+    "link_title": "View",
+    "link_internal": false,
     "icon": "graduation-cap",
     "github": "MathewBoyles/Tourism-NZ",
     "tags": [
       "tag-web",
-      "tag-academic"
+      "tag-academic",
+      "tag-view"
     ]
   },
   {
@@ -23,21 +24,24 @@
     "github": false,
     "tags": [
       "tag-graphic",
-      "tag-competition"
+      "tag-team",
+      "tag-competition",
+      "tag-info"
     ]
   },
   {
     "title": "Kmart Store Finder",
     "date": "June, 2017",
     "thumbnail": "kmart-nz",
-    "link": "kmart-nz",
-    "link_title": "Info",
-    "link_internal": true,
+    "link": "https://mathewboyles.github.io/Kmart-NZ/",
+    "link_title": "View",
+    "link_internal": false,
     "icon": "graduation-cap",
     "github": "MathewBoyles/Kmart-NZ",
     "tags": [
       "tag-web",
-      "tag-academic"
+      "tag-academic",
+      "tag-view"
     ]
   },
   {
@@ -45,13 +49,14 @@
     "date": "June, 2017",
     "thumbnail": "apexeducation",
     "link": "https://apexeducation.nz/",
-    "link_title": "Website",
+    "link_title": "View",
     "link_internal": false,
     "icon": "usd",
     "github": false,
     "tags": [
       "tag-web",
-      "tag-commission"
+      "tag-commission",
+      "tag-view"
     ]
   },
   {
@@ -66,36 +71,40 @@
     "tags": [
       "tag-web",
       "tag-graphic",
-      "tag-commission"
+      "tag-commission",
+      "tag-info",
+      "tag-view"
     ]
   },
   {
     "title": "WCL Community Lending",
     "date": "May, 2017",
     "thumbnail": "wclcommunity",
-    "link": "wcl",
-    "link_title": "Info",
-    "link_internal": true,
+    "link": "https://mathewboyles.github.io/WCL-Community-Lending/",
+    "link_title": "View",
+    "link_internal": false,
     "icon": "graduation-cap",
     "github": "MathewBoyles/WCL-Community-Lending",
     "tags": [
       "tag-web",
-      "tag-academic"
+      "tag-academic",
+      "tag-view"
     ]
   },
   {
     "title": "Deluxe Cafe",
     "date": "April, 2017",
     "thumbnail": "deluxecafe",
-    "link": "deluxecafe",
-    "link_title": "Info",
-    "link_internal": true,
+    "link": "https://mathewboyles.github.io/Deluxe-Cafe/",
+    "link_title": "View",
+    "link_internal": false,
     "icon": "graduation-cap",
     "github": "MathewBoyles/Deluxe-Cafe",
     "tags": [
       "tag-web",
       "tag-team",
-      "tag-academic"
+      "tag-academic",
+      "tag-view"
     ]
   },
   {
@@ -103,14 +112,15 @@
     "date": "March, 2017",
     "thumbnail": "memory",
     "link": "https://mathewboyles.github.io/Memory-Game/",
-    "link_title": "Play Game",
+    "link_title": "Play",
     "link_internal": false,
     "icon": "graduation-cap",
     "github": "MathewBoyles/Memory-Game",
     "tags": [
       "tag-web",
       "tag-game",
-      "tag-academic"
+      "tag-academic",
+      "tag-view"
     ]
   },
   {
@@ -118,13 +128,14 @@
     "date": "November, 2016",
     "thumbnail": "alumni",
     "link": "http://alumni.hawerahs.school.nz/",
-    "link_title": "Website",
+    "link_title": "View",
     "link_internal": false,
     "icon": "usd",
     "github": false,
     "tags": [
       "tag-web",
-      "tag-commission"
+      "tag-commission",
+      "tag-view"
     ]
   },
   {
@@ -138,7 +149,10 @@
     "github": false,
     "tags": [
       "tag-web",
-      "tag-commission"
+      "tag-commission",
+      "tag-info",
+      "tag-view",
+      "tag-download"
     ]
   },
   {
@@ -167,7 +181,8 @@
     "tags": [
       "tag-web",
       "tag-graphic",
-      "tag-commission"
+      "tag-commission",
+      "tag-info"
     ]
   },
   {
@@ -181,7 +196,9 @@
     "github": "MathewBoyles/HabLoader",
     "tags": [
       "tag-web",
-      "tag-practise"
+      "tag-practise",
+      "tag-info",
+      "tag-view"
     ]
   },
   {
@@ -209,7 +226,9 @@
     "github": "MathewBoyles/SuperPlayer",
     "tags": [
       "tag-web",
-      "tag-competition"
+      "tag-competition",
+      "tag-info",
+      "tag-view"
     ]
   },
   {
@@ -223,7 +242,9 @@
     "github": "MathewBoyles/Proximity-Player",
     "tags": [
       "tag-web",
-      "tag-practise"
+      "tag-practise",
+      "tag-info",
+      "tag-view"
     ]
   },
   {

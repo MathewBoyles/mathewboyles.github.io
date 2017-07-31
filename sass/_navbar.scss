@@ -26,7 +26,7 @@
 
         > a {
           color: #fff;
-          font-family: Montserrat, Helvetica, Arial, sans-serif;
+          @extend .primary-font;
           font-weight: 900;
           text-decoration: none;
 
@@ -74,7 +74,7 @@
       .navbar-name {
         color: #fff;
         display: none;
-        font-family: Montserrat, Helvetica, Arial, sans-serif;
+        @extend .primary-font;
         font-weight: 900;
         line-height: 35px;
         padding-left: 10px;
@@ -94,7 +94,7 @@
 
           > a {
             color: #fff;
-            font-family: Montserrat, Helvetica, Arial, sans-serif;
+            @extend .primary-font;
             font-weight: 900;
             text-decoration: none;
           }

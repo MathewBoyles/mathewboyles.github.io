@@ -51,7 +51,7 @@
       }
 
       .header-title {
-        font-family: Montserrat, Helvetica, Arial, sans-serif;
+        @extend .primary-font;
         font-size: 4.7em;
         font-weight: bold;
         @media (max-width: 900px) {
@@ -67,7 +67,7 @@
       }
 
       .header-caption {
-        font-family: Montserrat, Helvetica, Arial, sans-serif;
+        @extend .primary-font;
 
         &::before {
           background: #fff;
