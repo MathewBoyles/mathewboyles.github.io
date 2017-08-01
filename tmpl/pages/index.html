@@ -74,6 +74,10 @@
                 {{/if}}
                 {{#if link}}
                 <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" class="btn btn-black btn-sm link-view" {{#unless link_internal}}target="_blank"{{/unless}}>{{link_title}}{{#unless link_internal}} <i class="fa fa-external-link"></i>{{/unless}}</a>
+                {{else}}
+                {{#unless github}}
+                <br /><small class="text-muted"><strong>NO LONGER AVAILABLE</strong></small>
+                {{/unless}}
                 {{/if}}
               </div>
             </div>

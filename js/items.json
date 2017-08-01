@@ -95,9 +95,9 @@
     "title": "Deluxe Cafe",
     "date": "April, 2017",
     "thumbnail": "deluxecafe",
-    "link": "https://mathewboyles.github.io/Deluxe-Cafe/",
-    "link_title": "View",
-    "link_internal": false,
+    "link": "deluxecafe",
+    "link_title": "Info",
+    "link_internal": true,
     "icon": "graduation-cap",
     "github": "MathewBoyles/Deluxe-Cafe",
     "tags": [
@@ -173,32 +173,14 @@
     "title": "Mybelle",
     "date": "January, 2015",
     "thumbnail": "mybelle",
-    "link": "mybelle",
-    "link_title": "Info",
-    "link_internal": true,
+    "link": false,
+    "link_title": false,
+    "link_internal": false,
     "icon": "usd",
     "github": false,
     "tags": [
       "tag-web",
-      "tag-graphic",
-      "tag-commission",
-      "tag-info"
-    ]
-  },
-  {
-    "title": "HabLoader",
-    "date": "January, 2015",
-    "thumbnail": "habloader",
-    "link": "habloader",
-    "link_title": "Info",
-    "link_internal": true,
-    "icon": "pencil",
-    "github": "MathewBoyles/HabLoader",
-    "tags": [
-      "tag-web",
-      "tag-practise",
-      "tag-info",
-      "tag-view"
+      "tag-commission"
     ]
   },
   {
@@ -219,15 +201,14 @@
     "title": "SuperPlayer",
     "date": "June, 2014",
     "thumbnail": "superplayer",
-    "link": "superplayer",
-    "link_title": "Info",
-    "link_internal": true,
+    "link": "https://mathewboyles.github.io/SuperPlayer/",
+    "link_title": "View",
+    "link_internal": false,
     "icon": "trophy",
     "github": "MathewBoyles/SuperPlayer",
     "tags": [
       "tag-web",
       "tag-competition",
-      "tag-info",
       "tag-view"
     ]
   },
