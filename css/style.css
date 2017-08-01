@@ -643,6 +643,8 @@ html {
   .primary-info .info-title:not(.info-title-first) {
     margin-top: 30px; }
 
+.primary-team .media img.media-object {
+  width: 64px; }
 .primary-team .media .media-body .media-heading {
   margin: 4px 0 7px; }
 
