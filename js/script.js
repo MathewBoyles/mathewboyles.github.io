@@ -102,6 +102,7 @@ $(document).ready(function() {
         cache: false,
         success: function(tmplData, status, data) {
           $("#loading").fadeOut(250);
+          $("#scroller").scrollTop(0);
 
           var pageTitle = tmplData.match(/<title>(.*?)<\/title>/g).map(function(val) {
             return val.replace(/<\/?title>/g, '');
@@ -218,5 +219,6 @@ $(document).ready(function() {
 
 $(window).bind("hashchange", function(event) {
   $("#loading").fadeIn(250);
+  $(".modal").modal("hide");
   app.loadPage(window.location.hash.replace("#!/", ""));
 });
