@@ -1,6 +1,7 @@
 var app;
 $(document).ready(function() {
   app = {
+    analytics: "UA-57157301-7",
     assetCount: 0,
     assetLoaded: 0,
     loaded: false,
@@ -54,11 +55,34 @@ $(document).ready(function() {
             image: $(this).attr("href")
           };
           var html = compiledTemplate(context);
-          $(html).modal("show").on("hidden.bs.modal", function () {
+          $(html).modal("show").on("hidden.bs.modal", function() {
             $(this).remove();
           });
 
           event.preventDefault();
+        });
+      });
+
+      $("a[target]:not(.js-dnt)").each(function() {
+        if ($(this).data("dataInit")) return;
+
+        $(this).data("dataInit", 1).click(function(event) {
+          ga("send", "event", "outbound", "click", $(this).attr("href"), {
+            "transport": "beacon"
+          });
+        });
+      });
+
+      $(".js-track").each(function() {
+        if ($(this).data("dataInit")) return;
+
+        $(this).data("dataInit", 1).click(function(event) {
+          ga("send", "event", "outbound", "click", $(this).attr("href"), {
+            "transport": "beacon",
+            "hitCallback": function() {
+              window.location = $(this).attr("href");
+            }
+          });
         });
       });
 
@@ -80,6 +104,7 @@ $(document).ready(function() {
 
       if (!app.loaded) {
         app.loaded = true;
+        ga("create", app.analytics, "auto");
         $(window).trigger("hashchange");
 
         app.menu = new mlPushMenu(
@@ -105,7 +130,7 @@ $(document).ready(function() {
           $("#scroller").scrollTop(0);
 
           var pageTitle = tmplData.match(/<title>(.*?)<\/title>/g).map(function(val) {
-            return val.replace(/<\/?title>/g, '');
+            return val.replace(/<\/?title>/g, "");
           });
 
           document.title = pageTitle[0];
@@ -213,12 +238,32 @@ $(document).ready(function() {
 
     app.assetLoad();
   });
+  app.assetAdd();
+  (function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.onload = app.assetLoad;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
 
   app.contentAware();
 });
 
 $(window).bind("hashchange", function(event) {
+  if (window.location.hash.substring(0, 3) !== "#!/") {
+    window.location.hash = "#!/index";
+    return;
+  }
+
   $("#loading").fadeIn(250);
   $(".modal").modal("hide");
-  app.loadPage(window.location.hash.replace("#!/", ""));
+
+  ga("send", "pageview", window.location.hash);
+  app.loadPage(window.location.hash.substring(3));
 });
