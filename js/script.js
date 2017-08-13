@@ -111,8 +111,11 @@ $(document).ready(function() {
           $("#mp-menu")[0],
           $("#navbar-open")[0]
         );
-        $("#navbar-close").click(function() {
-          $("#navbar-open").click();
+        $("#navbar-close, #navbar-open-footer").click(function(event) {
+          setTimeout(function() {
+            $("#navbar-open").click();
+          }, 50);
+          event.preventDefault();
         });
       }
 
