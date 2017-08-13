@@ -1,0 +1,33 @@
+<footer class="footer primary-footer">
+  <nav class="footer-nav">
+    <ul class="navbar-links">
+      {{#each links.nav}}
+      <li><a href="{{#if internal}}#!/{{/if}}{{link}}" class="js-link"{{#if internal}}{{else}} target="_blank"{{/if}}>{{title}}</a></li>
+      {{/each}}
+    </ul>
+    <div class="container">
+      <div class="navbar-bars">
+        <i class="fa fa-bars" aria-hidden="true" id="navbar-open"></i>
+      </div>
+      <a href="#!/index" class="link-blank js-link">
+        <img src="img/logo--text--white.svg" class="navbar-logo" />
+        <span class="navbar-name">Mathew Boyles</span>
+      </a>
+      <ul class="navbar-social">
+        {{#each links.social}}
+        <li><a href="{{link}}" target="_blank"><i class="fa fa-{{icon}}"></i></a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </nav>
+  <div class="container footer-bottom">
+    <div class="row">
+      <div class="col-xs-6">
+        <a href="https://console.mathewboyles.com">Login to Console</a>
+      </div>
+      <div class="col-xs-6 footer-copyright">
+        &copy; Mathew Boyles 2017
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,129 @@
+.footer {
+  &.primary-footer {
+    background: #242526;
+    border: none;
+    margin: 0;
+    padding: 35px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+
+    .footer-nav {
+      border-bottom: 1px solid #404040;
+      padding-bottom: 30px;
+
+      .navbar-links {
+        list-style: none;
+        margin: 27px 0;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+
+        > li {
+          color: #fff;
+          display: inline-block;
+          padding: 17px 10px 10px;
+          position: relative;
+          text-transform: uppercase;
+          z-index: 100;
+
+          > a {
+            color: #fff;
+            @extend .primary-font;
+            font-weight: 900;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .container {
+        position: relative;
+
+        .navbar-bars {
+          color: #fff;
+          cursor: pointer;
+          display: none;
+          float: right;
+          font-size: 2em;
+        }
+
+        .navbar-logo {
+          background: #fff;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          height: 35px;
+        }
+
+        .navbar-name {
+          color: #fff;
+          display: none;
+          @extend .primary-font;
+          font-weight: 900;
+          line-height: 35px;
+          padding-left: 10px;
+        }
+
+        .navbar-social {
+          float: right;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          > li {
+            color: #fff;
+            display: inline-block;
+            padding: 10px 6px;
+            text-transform: uppercase;
+
+            > a {
+              color: #fff;
+              @extend .primary-font;
+              font-weight: 900;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      @media (max-width: 700px) {
+        .navbar-links {
+          display: none;
+        }
+
+        .container {
+          .navbar-bars {
+            display: block;
+          }
+
+          .navbar-name {
+            display: inline;
+          }
+
+          .navbar-social {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      color: #fff;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: .05em;
+      line-height: 1.6;
+      padding-top: 40px;
+
+      a {
+        color: inherit;
+      }
+
+      .footer-copyright {
+        text-align: right;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

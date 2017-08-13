@@ -14,7 +14,7 @@ html {
 .quote-block {
   min-height: calc(100vh - 144px); }
 
-.primary-font, .navbar.primary-navbar .navbar-links > li > a, .navbar.primary-navbar .container .navbar-name, .navbar.primary-navbar .container .navbar-social > li > a, .mp-menu h2, .jumbotron.primary-header .header-container .header-title, .jumbotron.primary-header .header-container .header-caption, .panel.primary-item .panel-title {
+.primary-font, .navbar.primary-navbar .navbar-links > li > a, .navbar.primary-navbar .container .navbar-name, .navbar.primary-navbar .container .navbar-social > li > a, .footer.primary-footer .footer-nav .navbar-links > li > a, .footer.primary-footer .footer-nav .container .navbar-name, .footer.primary-footer .footer-nav .container .navbar-social > li > a, .mp-menu h2, .jumbotron.primary-header .header-container .header-title, .jumbotron.primary-header .header-container .header-caption, .panel.primary-item .panel-title {
   font-family: Montserrat, Helvetica, Arial, sans-serif !important; }
 
 @-webkit-keyframes loading {
@@ -221,6 +221,92 @@ html {
       display: inline; }
     .navbar.primary-navbar .container .navbar-social {
       display: none; } }
+
+.footer.primary-footer {
+  background: #242526;
+  border: none;
+  margin: 0;
+  padding: 35px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 100; }
+  .footer.primary-footer .footer-nav {
+    border-bottom: 1px solid #404040;
+    padding-bottom: 30px; }
+    .footer.primary-footer .footer-nav .navbar-links {
+      list-style: none;
+      margin: 27px 0;
+      padding: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%; }
+      .footer.primary-footer .footer-nav .navbar-links > li {
+        color: #fff;
+        display: inline-block;
+        padding: 17px 10px 10px;
+        position: relative;
+        text-transform: uppercase;
+        z-index: 100; }
+        .footer.primary-footer .footer-nav .navbar-links > li > a {
+          color: #fff;
+          font-weight: 900;
+          text-decoration: none; }
+    .footer.primary-footer .footer-nav .container {
+      position: relative; }
+      .footer.primary-footer .footer-nav .container .navbar-bars {
+        color: #fff;
+        cursor: pointer;
+        display: none;
+        float: right;
+        font-size: 2em; }
+      .footer.primary-footer .footer-nav .container .navbar-logo {
+        background: #fff;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        height: 35px; }
+      .footer.primary-footer .footer-nav .container .navbar-name {
+        color: #fff;
+        display: none;
+        font-weight: 900;
+        line-height: 35px;
+        padding-left: 10px; }
+      .footer.primary-footer .footer-nav .container .navbar-social {
+        float: right;
+        list-style: none;
+        margin: 0;
+        padding: 0; }
+        .footer.primary-footer .footer-nav .container .navbar-social > li {
+          color: #fff;
+          display: inline-block;
+          padding: 10px 6px;
+          text-transform: uppercase; }
+          .footer.primary-footer .footer-nav .container .navbar-social > li > a {
+            color: #fff;
+            font-weight: 900;
+            text-decoration: none; }
+    @media (max-width: 700px) {
+      .footer.primary-footer .footer-nav .navbar-links {
+        display: none; }
+      .footer.primary-footer .footer-nav .container .navbar-bars {
+        display: block; }
+      .footer.primary-footer .footer-nav .container .navbar-name {
+        display: inline; }
+      .footer.primary-footer .footer-nav .container .navbar-social {
+        display: none; } }
+  .footer.primary-footer .footer-bottom {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: .05em;
+    line-height: 1.6;
+    padding-top: 40px; }
+    .footer.primary-footer .footer-bottom a {
+      color: inherit; }
+    .footer.primary-footer .footer-bottom .footer-copyright {
+      text-align: right;
+      text-transform: uppercase; }
 
 *,
 *::before,
