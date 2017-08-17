@@ -653,10 +653,16 @@ html {
 
 .primary-quote {
   background: #2196F3;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   font-family: 'Zilla Slab', serif;
   padding: 40px 0;
   text-align: center; }
+  .primary-quote .quote-content {
+    padding: 35px 0;
+    width: 50%; }
   .primary-quote .quote-text {
     font-size: 2em;
     font-style: italic; }
@@ -667,6 +673,15 @@ html {
       content: "~ "; }
   .primary-quote .btn {
     margin: 5px 3px; }
+  @media (min-width: 1200px) {
+    .primary-quote {
+      background-size: 70%; } }
+  @media (max-width: 700px) {
+    .primary-quote {
+      background-image: none !important; }
+      .primary-quote .quote-content {
+        padding: 0;
+        width: 100%; } }
 
 .mixer .controls {
   padding: 1.6em 0;

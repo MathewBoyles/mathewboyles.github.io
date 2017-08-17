@@ -1,9 +1,17 @@
 .primary-quote {
   background: $secondary-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   font-family: 'Zilla Slab', serif;
   padding: 40px 0;
   text-align: center;
+
+  .quote-content {
+    padding: 35px 0;
+    width: 50%;
+  }
 
   .quote-text {
     font-size: 2em;
@@ -21,5 +29,16 @@
 
   .btn {
     margin: 5px 3px;
+  }
+
+  @media (min-width: 1200px) {
+    background-size: 70%;
+  }
+  @media (max-width: 700px) {
+    background-image: none!important;
+    .quote-content {
+      padding: 0;
+      width: 100%;
+    }
   }
 }
