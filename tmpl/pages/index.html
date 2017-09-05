@@ -47,7 +47,7 @@
     <div class="container mix-container" id="portfolio">
       <script type="text/template7" id="portfolio-item">
         {{#each items}}
-        <div class="mix {{join tags delimiter=" "}}">
+        <div class="mix {{join tags delimiter=" "}}" id="wit__{{thumbnail}}">
           <div class="panel panel-default primary-item">
             {{#if link}}
             <a href="{{#if link_internal}}#!/item/{{/if}}{{link}}" {{#unless link_internal}}target="_blank"{{/unless}}>
