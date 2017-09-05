@@ -14,7 +14,7 @@ $(document).ready(function() {
       items: []
     },
     contentAware: function() {
-      if (app.assetLoaded < app.assetCount || typeof mlPushMenu == "undefined" || typeof Modernizr == "undefined" || typeof classie == "undefined" || typeof Template7 == "undefined" || app.vars.links.length === 0 || app.vars.items.length === 0) return;
+      if (app.assetLoaded < app.assetCount || typeof Modernizr == "undefined" || typeof classie == "undefined" || typeof Template7 == "undefined" || app.vars.links.length === 0 || app.vars.items.length === 0) return;
 
       $("tmpl").each(function() {
         if ($(this).data("dataInit")) return;
@@ -35,8 +35,8 @@ $(document).ready(function() {
         $(this).data("dataInit", 1).click(function(event) {
           if (!$($(this).attr("href")).is(":visible")) return;
 
-          $("#scroller").animate({
-            scrollTop: $($(this).attr("href")).offset().top + $("#scroller").scrollTop()
+          $("body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
           }, 500);
 
           event.preventDefault();
@@ -107,15 +107,34 @@ $(document).ready(function() {
         ga("create", app.analytics, "auto");
         $(window).trigger("hashchange");
 
-        app.menu = new mlPushMenu(
-          $("#mp-menu")[0],
-          $("#navbar-open")[0]
-        );
-        $("#navbar-close, #navbar-open-footer").click(function(event) {
-          setTimeout(function() {
-            $("#navbar-open").click();
-          }, 50);
+        $("#navbar-close, #navbar-open-footer, #navbar-open, #sidebar-overlay").click(function(event) {
+          if ($("#sidebar-overlay").css("opacity") != 0 && $("#sidebar-overlay").css("opacity") != 1) return;
+
+          if ($("#sidebar-overlay").is(":visible")) {
+            $("html").css("overflow", "auto");
+            $("#sidebar-overlay").fadeOut(250);
+            $("#sidebar")
+              .animate({
+                left: 0 - $("#sidebar").width()
+              }, 250, function() {
+                $("#sidebar").hide();
+              });
+          } else {
+            $("html").css("overflow", "hidden");
+            $("#sidebar-overlay").fadeIn(250);
+            $("#sidebar")
+              .css("left", 0 - $("#sidebar").width())
+              .show()
+              .animate({
+                left: 0
+              }, 250);
+          }
+
           event.preventDefault();
+        });
+
+        $("#sidebar a").click(function() {
+          $("#navbar-close").click();
         });
       }
 
@@ -123,14 +142,14 @@ $(document).ready(function() {
     },
     loadPage: function(url) {
       if (!url) url = "index";
-      if ($("#mp-menu .mp-level").hasClass("mp-level-open")) $("#navbar-open").click();
+      if ($("#sidebar-overlay").is(":visible")) $("#navbar-close").click();
 
       $.ajax({
         url: app.vars.root + "tmpl/pages/" + url + ".html",
         cache: false,
         success: function(tmplData, status, data) {
           $("#loading").fadeOut(250);
-          $("#scroller").scrollTop(0);
+          $(window).scrollTop(0);
 
           var pageTitle = tmplData.match(/<title>(.*?)<\/title>/g).map(function(val) {
             return val.replace(/<\/?title>/g, "");
@@ -230,7 +249,6 @@ $(document).ready(function() {
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js", "js", app.assetLoad);
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js", "js", app.assetLoad);
   app.assetAdd().include(app.vars.root + "js/mixitup.min.js", "js", app.assetLoad);
-  app.assetAdd().include(app.vars.root + "js/mlpushmenu.min.js", "js", app.assetLoad);
   app.assetAdd().include(app.vars.root + "js/links.json?_=" + ((new Date()).getTime()), "json", function(data) {
     app.vars.links = data;
 
@@ -242,6 +260,7 @@ $(document).ready(function() {
     app.assetLoad();
   });
   app.assetAdd();
+
   (function(i, s, o, g, r, a, m) {
     i["GoogleAnalyticsObject"] = r;
     i[r] = i[r] || function() {
@@ -254,6 +273,15 @@ $(document).ready(function() {
     a.onload = app.assetLoad;
     m.parentNode.insertBefore(a, m)
   })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:603124,hjsv:5};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 
   app.contentAware();
 });

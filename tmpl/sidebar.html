@@ -1,6 +1,8 @@
-<nav id="mp-menu" class="mp-menu">
-  <div class="mp-level">
+<nav id="sidebar">
+  <div class="sidebar-heading">
     <h2>Mathew Boyles <i class="fa fa-times pull-right" id="navbar-close"></i></h2>
+  </div>
+  <div class="sidebar-content">
     <ul>
       {{#each links.nav}}
       <li><a href="{{#if internal}}#!/{{/if}}{{link}}" class="js-link"{{#if internal}}{{else}} target="_blank"{{/if}}><span>{{title}}</span></a></li>
@@ -12,3 +14,4 @@
     </ul>
   </div>
 </nav>
+<div id="sidebar-overlay"></div>

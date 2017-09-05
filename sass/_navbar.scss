@@ -61,6 +61,10 @@
         display: none;
         float: right;
         font-size: 2em;
+
+        > i {
+          cursor: pointer;
+        }
       }
 
       .navbar-logo {
