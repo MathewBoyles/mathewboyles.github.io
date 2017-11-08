@@ -11,7 +11,7 @@
       "internal": true
     },
     {
-      "link": "about",
+      "link": "contact",
       "title": "Contact",
       "internal": true
     }
@@ -27,5 +27,8 @@
       "title": "GitHub",
       "icon": "github"
     }
-  ]
+  ],
+  "alias": {
+    "contact": "about"
+  }
 }
