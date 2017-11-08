@@ -153,6 +153,8 @@ $(document).ready(function() {
       return app;
     },
     loadPage: function(url) {
+      url = url.split("?");
+      url = url[0];
       var ourl = url;
       if (!url) url = "index";
       if (typeof app.vars.links.alias[url] == "string") url = app.vars.links.alias[url];
