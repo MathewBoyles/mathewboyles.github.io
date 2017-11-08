@@ -1,0 +1,15 @@
+.highlight {
+  &:not(.hl-animate) {
+    background: #ffffd2;
+    border-radius: 10px;
+  }
+}
+
+.hl-animate {
+  transition: all 0.5s;
+
+  &.highlight {
+    background: #ffffd2;
+    border-radius: 10px;
+  }
+}

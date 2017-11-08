@@ -2,7 +2,7 @@
   <nav class="footer-nav">
     <ul class="navbar-links">
       {{#each links.nav}}
-      <li><a href="{{#if internal}}#!/{{/if}}{{link}}" class="js-link"{{#if internal}}{{else}} target="_blank"{{/if}}>{{title}}</a></li>
+      <li data-nav="{{#if internal}}{{link}}{{else}}--external{{/if}}"><a href="{{#if internal}}#!/{{/if}}{{link}}" data-link="{{link}}" class="js-link"{{#if internal}}{{else}} target="_blank"{{/if}}>{{title}}</a></li>
       {{/each}}
     </ul>
     <div class="container">

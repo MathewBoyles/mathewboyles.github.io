@@ -22,6 +22,7 @@ html {
   80% {
     box-shadow: 0 0;
     height: 4em; }
+
   40% {
     box-shadow: 0 -2em;
     height: 5em; } }
@@ -31,6 +32,7 @@ html {
   80% {
     box-shadow: 0 0;
     height: 4em; }
+
   40% {
     box-shadow: 0 -2em;
     height: 5em; } }
@@ -115,8 +117,8 @@ html {
     background-color: #000;
     color: #fff; }
 .btn.active, .btn.btn-blue, .btn.mixitup-control-active {
-  background: #2196F3;
-  border-color: #2196F3; }
+  background: #2196f3;
+  border-color: #2196f3; }
   .btn.active:not(.btn-dead):hover, .btn.btn-blue:not(.btn-dead):hover, .btn.mixitup-control-active:not(.btn-dead):hover {
     background: #39a1f4;
     border-color: #39a1f4;
@@ -175,7 +177,7 @@ html {
           -o-transition: all 0.3s ease;
           transition: all 0.3s ease;
           width: 0; }
-        .navbar.primary-navbar .navbar-links > li > a:hover::after {
+        .navbar.primary-navbar .navbar-links > li > a:hover::after, .navbar.primary-navbar .navbar-links > li > a.active::after {
           width: 100%; }
   .navbar.primary-navbar .container {
     position: relative; }
@@ -323,7 +325,7 @@ html {
   z-index: 100001; }
   #sidebar .sidebar-heading {
     background: #4f4f4f;
-    color: #FFF;
+    color: white;
     padding: 30px; }
     #sidebar .sidebar-heading h2 {
       font-size: 1.3em;
@@ -334,7 +336,7 @@ html {
     list-style: none;
     padding: 0; }
     #sidebar .sidebar-content ul > li > a {
-      color: #FFF;
+      color: white;
       display: block;
       font-size: 1.1em;
       padding: 15px 30px 15px 20px;
@@ -430,7 +432,7 @@ html {
       color: #fff; }
 
 .primary-quote {
-  background: #2196F3;
+  background: #2196f3;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -527,4 +529,12 @@ html {
 .primary-team .media .media-body .media-heading {
   margin: 4px 0 7px; }
 
-/*# sourceMappingURL=style.css.map */
+.highlight:not(.hl-animate) {
+  background: #ffffd2;
+  border-radius: 10px; }
+
+.hl-animate {
+  transition: all 0.5s; }
+  .hl-animate.highlight {
+    background: #ffffd2;
+    border-radius: 10px; }
