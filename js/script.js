@@ -157,7 +157,7 @@ $(document).ready(function() {
       url = url[0];
       var ourl = url;
       if (!url) url = "index";
-      if (typeof app.vars.links.alias[url] == "string") url = app.vars.links.alias[url];
+      if (typeof app.vars.links.aliases[url] == "string") url = app.vars.links.aliases[url];
       if ($("#sidebar-overlay").is(":visible")) $("#navbar-close").click();
 
       $.ajax({
