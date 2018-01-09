@@ -1,4 +1,19 @@
 [{
+    "title": "Skylight CMS",
+    "date": "December, 2017",
+    "thumbnail": "skylight",
+    "link": "https://skylight.mathewboyles.com",
+    "link_title": "View",
+    "link_internal": false,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/Skylight-CMS",
+    "tags": [
+      "tag-web",
+      "tag-academic",
+      "tag-view"
+    ]
+  },
+  {
     "title": "CK Vapour",
     "date": "August, 2017",
     "thumbnail": "ckvapour",
