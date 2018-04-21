@@ -198,19 +198,5 @@
       "tag-info",
       "tag-view"
     ]
-  },
-  {
-    "title": "Minecart Network",
-    "date": "2014",
-    "thumbnail": "minecart",
-    "link": false,
-    "link_title": false,
-    "link_internal": false,
-    "icon": "pencil",
-    "github": false,
-    "tags": [
-      "tag-web",
-      "tag-practise"
-    ]
   }
 ]
