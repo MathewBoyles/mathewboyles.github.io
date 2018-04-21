@@ -107,22 +107,6 @@
     ]
   },
   {
-    "title": "Deluxe Cafe",
-    "date": "April, 2017",
-    "thumbnail": "deluxecafe",
-    "link": "deluxecafe",
-    "link_title": "Info",
-    "link_internal": true,
-    "icon": "graduation-cap",
-    "github": "MathewBoyles/Deluxe-Cafe",
-    "tags": [
-      "tag-web",
-      "tag-team",
-      "tag-academic",
-      "tag-view"
-    ]
-  },
-  {
     "title": "Memory Game",
     "date": "March, 2017",
     "thumbnail": "memory",
