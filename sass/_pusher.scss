@@ -5,6 +5,7 @@
 
 #sidebar {
   background: $sidebar-color;
+  background: rgba($sidebar-color, 0.85);
   box-shadow: -10px 0 20px 5px #1b1b1b;
   height: 100%;
   left: 0;

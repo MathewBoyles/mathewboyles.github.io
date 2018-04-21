@@ -8,6 +8,12 @@
   padding: 40px 0;
   text-align: center;
 
+  .container {
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
   .quote-content {
     padding: 35px 0;
     width: 50%;
@@ -31,14 +37,26 @@
     margin: 5px 3px;
   }
 
+  &.dark {
+    background-color: #464646;
+  }
   @media (min-width: 1200px) {
     background-size: 70%;
   }
   @media (max-width: 700px) {
     background-image: none!important;
+
+    .container {
+      background-image: none!important;
+    }
+
     .quote-content {
       padding: 0;
       width: 100%;
+
+      &.center-small {
+        text-align: center!important;
+      }
     }
   }
 }

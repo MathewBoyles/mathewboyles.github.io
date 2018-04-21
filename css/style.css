@@ -22,7 +22,6 @@ html {
   80% {
     box-shadow: 0 0;
     height: 4em; }
-
   40% {
     box-shadow: 0 -2em;
     height: 5em; } }
@@ -32,7 +31,6 @@ html {
   80% {
     box-shadow: 0 0;
     height: 4em; }
-
   40% {
     box-shadow: 0 -2em;
     height: 5em; } }
@@ -117,8 +115,8 @@ html {
     background-color: #000;
     color: #fff; }
 .btn.active, .btn.btn-blue, .btn.mixitup-control-active {
-  background: #2196f3;
-  border-color: #2196f3; }
+  background: #2196F3;
+  border-color: #2196F3; }
   .btn.active:not(.btn-dead):hover, .btn.btn-blue:not(.btn-dead):hover, .btn.mixitup-control-active:not(.btn-dead):hover {
     background: #39a1f4;
     border-color: #39a1f4;
@@ -317,6 +315,7 @@ html {
 
 #sidebar {
   background: #1c1c1c;
+  background: rgba(28, 28, 28, 0.85);
   box-shadow: -10px 0 20px 5px #1b1b1b;
   height: 100%;
   left: 0;
@@ -325,7 +324,7 @@ html {
   z-index: 100001; }
   #sidebar .sidebar-heading {
     background: #4f4f4f;
-    color: white;
+    color: #FFF;
     padding: 30px; }
     #sidebar .sidebar-heading h2 {
       font-size: 1.3em;
@@ -336,7 +335,7 @@ html {
     list-style: none;
     padding: 0; }
     #sidebar .sidebar-content ul > li > a {
-      color: white;
+      color: #FFF;
       display: block;
       font-size: 1.1em;
       padding: 15px 30px 15px 20px;
@@ -432,7 +431,7 @@ html {
       color: #fff; }
 
 .primary-quote {
-  background: #2196f3;
+  background: #2196F3;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -440,6 +439,10 @@ html {
   font-family: 'Zilla Slab', serif;
   padding: 40px 0;
   text-align: center; }
+  .primary-quote .container {
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain; }
   .primary-quote .quote-content {
     padding: 35px 0;
     width: 50%; }
@@ -453,15 +456,22 @@ html {
       content: "~ "; }
   .primary-quote .btn {
     margin: 5px 3px; }
+  .primary-quote.dark {
+    background-color: #464646; }
   @media (min-width: 1200px) {
     .primary-quote {
       background-size: 70%; } }
   @media (max-width: 700px) {
     .primary-quote {
       background-image: none !important; }
+      .primary-quote .container {
+        background-image: none !important; }
       .primary-quote .quote-content {
         padding: 0;
-        width: 100%; } }
+        width: 100%; }
+        .primary-quote .quote-content.center-small {
+          text-align: center !important; } }
+
 
 .mixer .controls {
   padding: 1.6em 0;
@@ -538,3 +548,5 @@ html {
   .hl-animate.highlight {
     background: #ffffd2;
     border-radius: 10px; }
+
+/*# sourceMappingURL=style.css.map */
