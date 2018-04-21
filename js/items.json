@@ -169,20 +169,6 @@
     ]
   },
   {
-    "title": "Bandchat",
-    "date": "December, 2014",
-    "thumbnail": "bandchat",
-    "link": false,
-    "link_title": false,
-    "link_internal": false,
-    "icon": "pencil",
-    "github": false,
-    "tags": [
-      "tag-web",
-      "tag-practise"
-    ]
-  },
-  {
     "title": "SuperPlayer",
     "date": "June, 2014",
     "thumbnail": "superplayer",
