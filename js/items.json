@@ -155,20 +155,6 @@
     ]
   },
   {
-    "title": "Mybelle",
-    "date": "January, 2015",
-    "thumbnail": "mybelle",
-    "link": false,
-    "link_title": false,
-    "link_internal": false,
-    "icon": "usd",
-    "github": false,
-    "tags": [
-      "tag-web",
-      "tag-commission"
-    ]
-  },
-  {
     "title": "SuperPlayer",
     "date": "June, 2014",
     "thumbnail": "superplayer",
