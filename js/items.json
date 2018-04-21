@@ -155,20 +155,6 @@
     ]
   },
   {
-    "title": "Top of the Deck",
-    "date": "February, 2015",
-    "thumbnail": "totd",
-    "link": false,
-    "link_title": false,
-    "link_internal": false,
-    "icon": "pencil",
-    "github": "MathewBoyles/Top-of-the-Deck",
-    "tags": [
-      "tag-web",
-      "tag-practise"
-    ]
-  },
-  {
     "title": "Mybelle",
     "date": "January, 2015",
     "thumbnail": "mybelle",
