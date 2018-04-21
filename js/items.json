@@ -14,6 +14,21 @@
     ]
   },
   {
+    "title": "Lightfarm",
+    "date": "September, 2017",
+    "thumbnail": "lightfarm",
+    "link": "lightfarm",
+    "link_title": "Info",
+    "link_internal": true,
+    "icon": "graduation-cap",
+    "github": "MathewBoyles/Lightfarm",
+    "tags": [
+      "tag-web",
+      "tag-academic",
+      "tag-view"
+    ]
+  },
+  {
     "title": "CK Vapour",
     "date": "August, 2017",
     "thumbnail": "ckvapour",
