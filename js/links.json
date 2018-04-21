@@ -1,6 +1,5 @@
 {
-  "nav": [
-    {
+  "nav": [{
       "link": "index",
       "title": "Work",
       "internal": true
@@ -16,8 +15,7 @@
       "internal": true
     }
   ],
-  "social": [
-    {
+  "social": [{
       "link": "https://www.linkedin.com/in/mathewboyles/",
       "title": "LinkedIn",
       "icon": "linkedin"
