@@ -399,6 +399,11 @@ $(document).ready(function() {
 });
 
 $(window).bind("hashchange", function(event) {
+  if (window.location.pathname !== "/") {
+    app.loadPage(404);
+    return;
+  }
+
   if (window.location.hash.substring(0, 3) !== "#!/") {
     window.location.hash = "#!/index";
     return;
