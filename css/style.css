@@ -472,6 +472,13 @@ html {
         .primary-quote .quote-content.center-small {
           text-align: center !important; } }
 
+#swiper {
+  padding: 40px 0 10px; }
+  #swiper .swiper-pagination {
+    bottom: auto;
+    margin-top: 10px;
+    position: initial; }
+
 #brands {
   padding: 20px 0; }
   #brands .swiper-container .swiper-slide img {

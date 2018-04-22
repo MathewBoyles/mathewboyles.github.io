@@ -112,7 +112,7 @@ $(document).ready(function() {
         };
         var html = compiledTemplate(context);
         $("#brands").html(html);
-        var swiper = new Swiper("#brands .swiper-container", {
+        new Swiper("#brands .swiper-container", {
           slidesPerView: 3,
           spaceBetween: 30,
           loop: true,
@@ -126,6 +126,21 @@ $(document).ready(function() {
             delay: 10000,
             disableOnInteraction: false
           }
+        });
+      }
+
+      if ($("#swiper").is("*")) {
+        if ($("#swiper").data("dataInit")) return;
+
+        $("#swiper").data("dataInit", 1);
+        new Swiper("#swiper .swiper-container", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: "#swiper .swiper-pagination",
+            clickable: true
+          },
         });
       }
 
