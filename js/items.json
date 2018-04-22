@@ -155,21 +155,6 @@
     ]
   },
   {
-    "title": "SuperPlayer",
-    "date": "June, 2014",
-    "thumbnail": "superplayer",
-    "link": "https://mathewboyles.github.io/SuperPlayer/",
-    "link_title": "View",
-    "link_internal": false,
-    "icon": "trophy",
-    "github": "MathewBoyles/SuperPlayer",
-    "tags": [
-      "tag-web",
-      "tag-competition",
-      "tag-view"
-    ]
-  },
-  {
     "title": "Proximity Player",
     "date": "April, 2014",
     "thumbnail": "proximity",
