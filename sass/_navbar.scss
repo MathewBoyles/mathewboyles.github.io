@@ -43,8 +43,8 @@
             width: 0;
           }
 
-          &:hover,
-          &.active {
+          &.active,
+          &:hover {
             &::after {
               width: 100%;
             }

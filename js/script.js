@@ -183,6 +183,7 @@ $(document).ready(function() {
       return app;
     },
     loadPage: function(url) {
+      url = url.toString();
       url = url.split("?");
       url = url[0];
       var ourl = url;

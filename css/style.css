@@ -175,7 +175,7 @@ html {
           -o-transition: all 0.3s ease;
           transition: all 0.3s ease;
           width: 0; }
-        .navbar.primary-navbar .navbar-links > li > a:hover::after, .navbar.primary-navbar .navbar-links > li > a.active::after {
+        .navbar.primary-navbar .navbar-links > li > a.active::after, .navbar.primary-navbar .navbar-links > li > a:hover::after {
           width: 100%; }
   .navbar.primary-navbar .container {
     position: relative; }
@@ -300,7 +300,7 @@ html {
     color: #fff;
     font-size: 10px;
     font-weight: 300;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     line-height: 1.6;
     padding-top: 40px; }
     .footer.primary-footer .footer-bottom a {
