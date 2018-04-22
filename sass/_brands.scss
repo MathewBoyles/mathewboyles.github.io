@@ -1,0 +1,17 @@
+#brands {
+  padding: 20px 0;
+
+  .swiper-container {
+    .swiper-slide {
+      img {
+        height: 75px;
+        transition: filter 0.5s;
+
+        &:not(:hover) {
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+        }
+      }
+    }
+  }
+}

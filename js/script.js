@@ -101,6 +101,34 @@ $(document).ready(function() {
         });
       });
 
+      if ($("#brands").is("*")) {
+        if ($("#brands").data("dataInit")) return;
+
+        $("#brands").data("dataInit", 1);
+        var template = $("#brands-template").html();
+        var compiledTemplate = Template7.compile(template);
+        var context = {
+          brands: app.vars.brands
+        };
+        var html = compiledTemplate(context);
+        $("#brands").html(html);
+        var swiper = new Swiper("#brands .swiper-container", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          loop: true,
+          breakpoints: {
+            425: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            }
+          },
+          autoplay: {
+            delay: 10000,
+            disableOnInteraction: false
+          }
+        });
+      }
+
       if (!$("#portfolio").data("dataInit") && $("#portfolio").is("*")) {
         $("#portfolio").data("dataInit", 1);
 
@@ -310,10 +338,15 @@ $(document).ready(function() {
   app.assetAdd().include("https://fonts.googleapis.com/css?family=" + app.fonts.join("|"), "css", app.assetLoad);
   app.assetAdd().include("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", "css", app.assetLoad);
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/template7/1.2.3/template7.min.js", "js", app.assetLoad);
-  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js", "js", app.assetLoad);
+  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js", "js", app.assetLoad);
+  app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css", "css", app.assetLoad);
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js", "js", app.assetLoad);
   app.assetAdd().include("https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js", "js", app.assetLoad);
   app.assetAdd().include(app.vars.root + "js/mixitup.min.js", "js", app.assetLoad);
+  app.assetAdd().include(app.vars.root + "js/brands.json?_=" + ((new Date()).getTime()), "json", function(data) {
+    app.vars.brands = data;
+    app.assetLoad();
+  });
   app.assetAdd().include(app.vars.root + "js/links.json?_=" + ((new Date()).getTime()), "json", function(data) {
     app.vars.links = data;
     app.assetLoad();

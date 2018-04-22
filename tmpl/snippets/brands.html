@@ -1,0 +1,17 @@
+<div class="primary-quote brands" id="brands">
+  <script type="text/template7" id="brands-template">
+    <div class="container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {{#each brands}}
+          <div class="swiper-slide">
+            <a href="{{link}}" target="_blank" class="js-link" title="{{name}}">
+              <img src="{{root}}img/brands/{{image}}.png" alt="{{name}} logo" />
+            </a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </script>
+</div>

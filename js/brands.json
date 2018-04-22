@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Hnry",
+    "image": "hnry",
+    "link": "https://hnry.co.nz"
+  },
+  {
+    "name": "Kiwibank FinTech Accelerator powered by Lightning Lab",
+    "image": "nzfintech",
+    "link": "https://nzfintech.kiwi/2018/02/25/meet-the-lab-techs-mathew-boyles"
+  },
+  {
+    "name": "Adobe Creative Jam",
+    "image": "adobe-cj",
+    "link": "https://designassembly.org.nz/2017/07/04/meet-the-designers-adobe-creative-jam-wellington/"
+  },
+  {
+    "name": "Creative HQ",
+    "image": "creativehq",
+    "link": "https://creativehq.co.nz"
+  },
+  {
+    "name": "Jrny",
+    "image": "jrny",
+    "link": "http://jrny.ai"
+  },
+  {
+    "name": "Choice",
+    "image": "choicetopay",
+    "link": "http://choicetopay.com"
+  },
+  {
+    "name": "Momentum Tutoring",
+    "image": "momentumtutoring",
+    "link": "https://www.momentumtutoring.co.nz"
+  }
+]

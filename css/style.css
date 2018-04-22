@@ -472,6 +472,14 @@ html {
         .primary-quote .quote-content.center-small {
           text-align: center !important; } }
 
+#brands {
+  padding: 20px 0; }
+  #brands .swiper-container .swiper-slide img {
+    height: 75px;
+    transition: filter 0.5s; }
+    #brands .swiper-container .swiper-slide img:not(:hover) {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%); }
 
 .mixer .controls {
   padding: 1.6em 0;
