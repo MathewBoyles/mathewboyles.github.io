@@ -138,23 +138,6 @@
     ]
   },
   {
-    "title": "Vendcher",
-    "date": "May, 2015",
-    "thumbnail": "vendcher",
-    "link": "vendcher",
-    "link_title": "Info",
-    "link_internal": true,
-    "icon": "usd",
-    "github": false,
-    "tags": [
-      "tag-web",
-      "tag-commission",
-      "tag-info",
-      "tag-view",
-      "tag-download"
-    ]
-  },
-  {
     "title": "Proximity Player",
     "date": "April, 2014",
     "thumbnail": "proximity",
