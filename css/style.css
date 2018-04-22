@@ -436,7 +436,6 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  font-family: 'Zilla Slab', serif;
   padding: 40px 0;
   text-align: center; }
   .primary-quote .container {
@@ -456,6 +455,8 @@ html {
       content: "~ "; }
   .primary-quote .btn {
     margin: 5px 3px; }
+  .primary-quote:not(.swiper) {
+    font-family: 'Zilla Slab', serif; }
   .primary-quote.dark {
     background-color: #464646; }
   @media (min-width: 1200px) {
@@ -478,6 +479,10 @@ html {
     bottom: auto;
     margin-top: 10px;
     position: initial; }
+
+.swiper h2 {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-weight: bold; }
 
 #brands {
   padding: 20px 0; }

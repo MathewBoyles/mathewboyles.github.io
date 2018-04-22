@@ -4,7 +4,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  font-family: 'Zilla Slab', serif;
   padding: 40px 0;
   text-align: center;
 
@@ -35,6 +34,10 @@
 
   .btn {
     margin: 5px 3px;
+  }
+
+  &:not(.swiper) {
+    font-family: 'Zilla Slab', serif;
   }
 
   &.dark {
