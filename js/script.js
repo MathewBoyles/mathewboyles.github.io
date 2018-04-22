@@ -4,6 +4,7 @@ $(document).ready(function() {
     analytics: "UA-57157301-7",
     assetCount: 0,
     assetLoaded: 0,
+    cache: {},
     loaded: false,
     menu: null,
     popInit: false,
@@ -14,7 +15,7 @@ $(document).ready(function() {
       items: []
     },
     contentAware: function() {
-      if (app.assetLoaded < app.assetCount || typeof Modernizr == "undefined" || typeof classie == "undefined" || typeof Template7 == "undefined" || app.vars.links.length === 0 || app.vars.items.length === 0) return;
+      if (app.assetLoaded < app.assetCount || typeof gtag == "undefined" || typeof Modernizr == "undefined" || typeof classie == "undefined" || typeof Template7 == "undefined" || app.vars.brands.length === 0 || app.vars.links.length === 0 || app.vars.items.length === 0) return;
 
       $("tmpl").each(function() {
         if ($(this).data("dataInit")) return;
@@ -79,8 +80,9 @@ $(document).ready(function() {
         if ($(this).data("dataInit")) return;
 
         $(this).data("dataInit", 1).click(function(event) {
-          ga("send", "event", "outbound", "click", $(this).attr("href"), {
-            "transport": "beacon"
+          gtag("event", "click", {
+            "event_category": "outbound",
+            "event_label": $(this).attr("href")
           });
         });
       });
@@ -89,9 +91,10 @@ $(document).ready(function() {
         if ($(this).data("dataInit")) return;
 
         $(this).data("dataInit", 1).click(function(event) {
-          ga("send", "event", "outbound", "click", $(this).attr("href"), {
-            "transport": "beacon",
-            "hitCallback": function() {
+          gtag("event", "click", {
+            "event_category": "outbound",
+            "event_label": $(this).attr("href"),
+            "event_callback": function() {
               window.location = $(this).attr("href");
             }
           });
@@ -116,7 +119,6 @@ $(document).ready(function() {
 
       if (!app.loaded) {
         app.loaded = true;
-        ga("create", app.analytics, "auto");
         $(window).trigger("hashchange");
 
         $("#navbar-close, #navbar-open-footer, #navbar-open, #sidebar-overlay").click(function(event) {
@@ -231,6 +233,19 @@ $(document).ready(function() {
     template: function(template, successFunction, element) {
       function newSuccess(template, successFunction, element) {
         return function(tmplData, status, tmplInfo) {
+
+          var useCache = false;
+          if (typeof element[0] != "undefined") {
+            if (element[0].hasAttribute("cache")) {
+              if (element.attr("cache")) useCache = element.attr("cache");
+              else useCache = element.attr("src");
+            }
+          }
+
+          if (useCache) {
+            app.cache[useCache] = tmplData;
+          }
+
           var template = tmplData;
           var compiledTemplate = Template7.compile(template);
           var context = app.vars;
@@ -250,11 +265,24 @@ $(document).ready(function() {
         tmplURL = app.vars.root + "tmpl/" + template + ".html";
       }
 
-      $.ajax({
-        url: tmplURL,
-        success: newSuccess(template, successFunction, element),
-        cache: false
-      });
+      var useCache = false;
+      if (typeof element[0] != "undefined") {
+        if (element[0].hasAttribute("cache")) {
+          if (element.attr("cache")) useCache = element.attr("cache");
+          else useCache = element.attr("src");
+        }
+      }
+
+      if (useCache && app.cache[useCache]) {
+        newSuccess(template, successFunction, element)(app.cache[useCache], "success", {});
+      } else {
+        element[0].hasAttribute("cache")
+        $.ajax({
+          url: tmplURL,
+          success: newSuccess(template, successFunction, element),
+          cache: false
+        });
+      }
 
       return app;
     },
@@ -288,28 +316,34 @@ $(document).ready(function() {
   app.assetAdd().include(app.vars.root + "js/mixitup.min.js", "js", app.assetLoad);
   app.assetAdd().include(app.vars.root + "js/links.json?_=" + ((new Date()).getTime()), "json", function(data) {
     app.vars.links = data;
-
     app.assetLoad();
   });
   app.assetAdd().include(app.vars.root + "js/items.json?_=" + ((new Date()).getTime()), "json", function(data) {
     app.vars.items = data;
-
     app.assetLoad();
   });
-  app.assetAdd();
 
-  (function(i, s, o, g, r, a, m) {
-    i["GoogleAnalyticsObject"] = r;
-    i[r] = i[r] || function() {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    a.onload = app.assetLoad;
-    m.parentNode.insertBefore(a, m)
-  })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+  (function(w, d, s, l) {
+    var e = d.createElement("script");
+    e.onload = l;
+    e.src = s;
+    d.head.appendChild(e);
+  })(window, document, "https://www.googletagmanager.com/gtag/js?id=" + app.analytics, function() {
+    window.dataLayer = window.dataLayer || [];
+
+    window.gtag = function() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", app.analytics, {
+      "linker": {
+        "domains": ["blog.mathewboyles.com"]
+      }
+    });
+
+    app.contentAware();
+  });
 
   (function(h, o, t, j, a, r) {
     h.hj = h.hj || function() {
@@ -324,6 +358,7 @@ $(document).ready(function() {
     r.async = 1;
     r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
     a.appendChild(r);
+    app.contentAware();
   })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
 
   app.contentAware();
@@ -338,6 +373,13 @@ $(window).bind("hashchange", function(event) {
   $("#loading").fadeIn(250);
   $(".modal").modal("hide");
 
-  ga("send", "pageview", window.location.hash);
+  gtag("config", app.analytics, {
+    "page_title": document.title,
+    "page_path": window.location.hash,
+    "linker": {
+      "domains": ["blog.mathewboyles.com"]
+    }
+  });
+
   app.loadPage(window.location.hash.substring(3));
 });
